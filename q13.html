@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>q13</title>
+        <style>
+            fieldset
+            {
+                margin:10px;
+                display: inline-block;
+                background-color: rgb(122, 122, 151);
+                color: rgb(227, 227, 202);
+            }
+            button
+            {
+                margin: 10px;
+            }
+            body
+            {
+                background-color:grey;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Product Order Form</h3>
+        <form onsubmit="price(event)">
+            <fieldset>
+                <legend>Electronics</legend>
+                <label><input type="checkbox" value="50000" class="product">TV</label><br>
+                <label><input type="checkbox" value="40000" class="product">Fridge</label><br>
+                <label><input type="checkbox" value="55000" class="product">AC</label><br>
+                <label><input type="checkbox" value="50000" class="product">Washing Machine</label><br>
+                <label><input type="checkbox" value="157000" class="product">MacBook Air</label><br>
+            </fieldset>
+            <fieldset>
+                <legend>Skincare</legend>
+                <label><input type="checkbox" value="500" class="product">Sunscreen</label><br>
+                <label><input type="checkbox" value="400" class="product">Moisturizer</label><br>
+                <label><input type="checkbox" value="550" class="product">Serum</label><br>
+                <label><input type="checkbox" value="50" class="product">Vaseline</label><br>
+                <label><input type="checkbox" value="50" class="product">Makeup Kits</label><br>
+            </fieldset>
+            <fieldset>
+                <legend>Clothing</legend>
+                <label><input type="checkbox" value="500" class="product">Hoodies</label><br>
+                <label><input type="checkbox" value="400" class="product">Pants</label><br>
+                <label><input type="checkbox" value="5500" class="product">Traditionals</label><br>
+                <label><input type="checkbox" value="5000" class="product">Dresses</label><br>
+                <label><input type="checkbox" value="5000" class="product">Nightwear</label><br>
+            </fieldset>
+            <fieldset>
+                <legend>Footwear</legend>
+                <label><input type="checkbox" value="250" class="product">Slides</label><br>
+                <label><input type="checkbox" value="4000" class="product">Heels</label><br>
+                <label><input type="checkbox" value="5500" class="product">Shoes</label><br>
+                <label><input type="checkbox" value="250" class="product">Floaters</label><br>
+                <label><input type="checkbox" value="1500" class="product">Sandals</label><br>
+            </fieldset>
+            <fieldset>
+                <legend>Accessories</legend>
+                <label><input type="checkbox" value="5000" class="product">Necklace</label><br>
+                <label><input type="checkbox" value="4000" class="product">Earrings</label><br>
+                <label><input type="checkbox" value="5500" class="product">Nosepin</label><br>
+                <label><input type="checkbox" value="5000" class="product">Rings</label><br>
+                <label><input type="checkbox" value="1500" class="product">Chokers</label><br>
+            </fieldset> <br>
+            <button type="submit">Submit</button>
+        </form>
+        <h3 id="result"></h3>
+    </body>
+    <script>
+        function price()
+        {
+            event.preventDefault();
+            let products=document.getElementsByClassName('product');
+            let price=0;
+            for(let prod of products)
+            {
+                if(prod.checked)
+                {
+                    price=price+parseFloat(prod.value);
+                }
+            }
+            document.getElementById("result").innerHTML=price;
+        }
+    </script>
+</html>
