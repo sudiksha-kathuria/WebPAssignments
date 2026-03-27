@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>q9</title>
+        <style>
+        </style>
+        <script>
+            function show()
+            {
+                let output=" ";
+                let colors=document.getElementsByName('color');
+                for(let i=0;i<colors.length;i++)
+                {
+                    if(colors[i].checked)
+                    {
+                        document.getElementById('result').innerHTML=colors[i].value;
+                    }
+                } 
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Select a colour</h3>
+        <input type="radio" name="color" value="Red">Red</input>
+        <input type="radio" name="color" value="Green">Green</input>
+        <input type="radio" name="color" value="Blue">Blue</input>
+        <button onclick="show()">Show the selected colour</button>
+        <div id="result"></div>
+    </body>
+</html>
