@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>q5</title>
+    <style>
+        form
+        {
+            background-color: rgb(116, 85, 116);
+            margin: 20px;
+            padding:10px;
+            display:inline-block;
+            border-radius:10px;
+        }
+        label
+        {
+            margin:10px;
+            color:white;
+        }
+        button
+        {
+            margin:10px;
+        }
+    </style>
+    <script>
+        function perform(event,operation)
+        {
+            event.preventDefault();
+            let first_number=parseFloat(document.getElementById('first').value);
+            let second_number=parseFloat(document.getElementById('second').value);
+            switch(operation)
+            {
+                case 'add':
+                    document.getElementById('result').innerHTML=first_number+second_number;
+                    break;
+                case 'subtract':
+                    document.getElementById('result').innerHTML=first_number-second_number;
+                    break;
+                case 'multiply':
+                    document.getElementById('result').innerHTML=first_number*second_number;
+                    break;
+                case 'divide':
+                {
+                    if(second_number!=0)
+                    {
+                        document.getElementById('result').innerHTML=first_number/second_number;
+                    }
+                    else
+                    {
+                        document.getElementById('result').innerHTML='Division by zero not possible';
+                    }
+                    break;
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <div>
+            <label>Enter first number</label>
+            <input type="number" id="first" step="any">
+        </div>
+        <br>
+        <div>
+            <label>Enter second number</label>
+            <input type="number" id="second" step="any">
+        </div>
+        <button onclick="perform(event,'add')">Add</button>
+        <button onclick="perform(event,'subtract')">Subtract</button>
+        <button onclick="perform(event,'multiply')">Multiply</button>
+        <button onclick="perform(event,'divide')">Divide</button>
+        <div id="result"></div>
+    </form>
+</body>
+</html>
