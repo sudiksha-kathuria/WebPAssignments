@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>q16</title>
+        <style>
+            .images
+            {
+                position:relative;
+            }
+            .images img
+            {
+                position: absolute;
+                height:300px;
+                width:175px;
+            }
+            #img1
+            {
+                top:10px;
+                left:30px;
+            }
+            #img2
+            {
+                top:60px;
+                left:80px;
+            }
+            #img3
+            {
+                top:110px;
+                left:130px;
+            }
+            #img4
+            {
+                top:160px;
+                left:180px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="images">
+            <img id='img1' onclick="topfn(this)" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbI2aLEDJE-PoluUtlkw8irjzNpbJnSmVa6w&s">
+            <img id='img2' onclick="topfn(this)" src="https://i.pinimg.com/736x/3e/d5/98/3ed5987e5f18033214a71d13a2147873.jpg">
+            <img id='img3' onclick="topfn(this)" src="https://i.pinimg.com/236x/f2/8d/50/f28d506da3c1ebbdde51a60fbfa7dc78.jpg">
+            <img id='img4' onclick="topfn(this)" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3YtKE7epjOyRos5BZ1uwVj1dqAtFpPzKZhg&s">
+        </div>
+    </body>
+    <script>
+        let index=1;
+        function topfn(img)
+        {
+            img.style.zIndex=++index;
+        }
+    </script>
+</html>
