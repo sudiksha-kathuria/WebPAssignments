@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>q1</title>
+    <style>
+        button
+        {
+            border: 1px solid black;
+            background-color:lightpink;
+            border-radius:5px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="message" onclick="hello()">Click me!</button>
+</body>
+<script>
+    function hello()
+    {
+        let text= "Hello, world!";
+        document.getElementById("message").outerHTML=text;
+    }
+</script>
+</html>
