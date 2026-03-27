@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>q12</title>
+        <style>
+            h3
+            {
+                background-color:pink;
+                color:grey;
+                padding:20px;
+                margin:20px;
+                border-radius:20px;
+            }
+            form
+            {
+                background-color:lightblue;
+                color:grey;
+                padding:20px;
+                margin:20px;
+                border-radius:20px;
+            }
+            button
+            {
+                background-color:rgb(126, 194, 126);
+                color:grey;
+                padding:10px;
+                margin:20px;
+                border-radius:10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <form>
+            <h3>Select your proficient skills</h3>
+            <label><input type="checkbox" value="java" class="skill">Java</label><br>
+            <label><input type="checkbox" value="html" class="skill">HTML</label><br>
+            <label><input type="checkbox" value="css" class="skill">CSS</label><br>
+            <label><input type="checkbox" value="js" class="skill">JavaScript</label><br>
+            <label><input type="checkbox" value="react" class="skill">React</label><br>
+            <label><input type="checkbox" value="c" class="skill">C</label><br>
+            <label><input type="checkbox" value="cpp" class="skill">C++</label><br>
+            <label><input type="checkbox" value="python" class="skill">Python</label><br>
+            <label><input type="checkbox" value="sql" class="skill">SQL</label><br>
+            <button type="button" onclick="checkValid()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </body>
+    <script>
+        function checkValid()
+        {
+            let c=0;
+            let array=[];
+            let skills=document.getElementsByClassName('skill');
+            document.getElementById('result').innerHTML = " ";
+            for(let i=0;i<skills.length;i++)
+            {
+                if(skills[i].checked)
+                {
+                    c++;
+                    array.push(skills[i].value);
+                }
+            }
+            if(c>=3)
+            {
+                for(let i=0;i<array.length;i++)
+                {
+                    document.getElementById('result').innerHTML+=array[i]+"<br>";
+                }
+            }
+            else
+            {
+                document.getElementById('result').innerHTML+="Error! Please select at least 3 skills";
+            }
+        }
+    </script>
+</html>
