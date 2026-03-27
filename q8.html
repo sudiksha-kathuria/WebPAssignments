@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>q8</title>
+        <style>
+            form
+            {
+                background-color:rgb(79, 166, 79);
+                display:inline-block;
+                margin:30px;
+                padding: 20px;
+                border-radius: 20px;
+                border: 1px dashed black;
+            }
+        </style>
+        <script>
+            function counting(event)
+            {
+                event.preventDefault();
+                let numb=Number(document.getElementById('num').value);
+                let i=1;
+                do
+                {
+                    document.getElementById('result').innerHTML+="<br>"+(numb+"X"+i+"="+(numb*i));
+                    i++;
+                }
+                while(i<=10)
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <label>Enter a number</label>
+            <input type="Number" id="num"><br>
+            <button onclick="counting(event)">Submit</button>
+        </form>
+        <div id="result"></div>
+    </body>
+</html>
