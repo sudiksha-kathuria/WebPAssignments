@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>q10</title>
+    <style>
+        body
+        {
+            background-color:pink;
+        }
+        .s
+        {
+            background-color:lightblue;
+            display: inline-block;
+            padding:20px;
+            margin:10px;
+            border-radius:10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Select your favourite subjects</h3>
+    <div class="s">
+    <input type="checkbox" value="DSA" name="subject">DSA</input><br>
+    <input type="checkbox" value="DSD" name="subject">DSD</input><br>
+    <input type="checkbox" value="Web Programming" name="subject">Web Programming</input><br>
+    <input type="checkbox" value="CAO" name="subject">CAO</input><br>
+    <input type="checkbox" value="MPMC" name="subject">MPMC</input><br>
+    <input type="checkbox" value="STS" name="subject">STS</input><br>
+    <input type="checkbox" value="Probability" name="subject">Probability</input><br>
+    <input type="checkbox" value="TOC" name="subject">TOC</input><br><br>
+    <button onclick="count()">Show the no. of subjects chosen</button>
+    <button onclick="display()">Show the subjects chosen</button>
+    <h3 id="counts"></h3>
+    <h3 id="subs"></h3>
+    </div>
+</body>
+<script>
+    function count()
+    {
+        let c=0;
+        let array=[];
+        let subjects=document.getElementsByName('subject');
+        for(let i=0;i<subjects.length;i++)
+        {
+            if(subjects[i].checked)
+            {
+                c++;
+            }
+        }
+        document.getElementById('counts').innerHTML=c;
+    }
+    function display()
+    {
+        let array=[];
+        let subjects=document.getElementsByName('subject');
+        for(let i=0;i<subjects.length;i++)
+        {
+            if(subjects[i].checked)
+            {
+                array.push(subjects[i].value);
+            }
+        }
+        document.getElementById('subs').innerHTML=array.join(", ");
+    }
+</script>
+</html>
