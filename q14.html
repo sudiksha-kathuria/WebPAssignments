@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Styling Application</title>
+    <style>
+        .bold{
+            font-weight: bold;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .smallcaps{
+            font-variant: small-caps;
+        }
+        #msg{
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<h2>Text Styling Application</h2>
+<fieldset>
+    <legend>Choose Styles</legend>
+    <button onclick="applyStyle('bold')">Bold</button>
+    <button onclick="applyStyle('italic')">Italic</button>
+    <button onclick="applyStyle('smallcaps')">Small Caps</button>
+</fieldset>
+<p id="msg">This is a sample message</p>
+<script>
+function applyStyle(styleName)
+{
+    let text = document.getElementById("msg");
+    text.className += " " + styleName;
+}
+</script>
+</body>
+</html>
