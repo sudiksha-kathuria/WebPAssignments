@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>q3</title>
+    <style>
+        form
+        {
+            display:grid;
+            grid-template-rows:(2,1fr);
+            margin: 40px;
+            background-color:pink;
+            padding: 30px;
+        }
+        .name
+        {
+            margin:10px;
+        }
+    </style>
+    <script>
+        function email(event,formObj)
+        {
+            event.preventDefault();
+            var firstname=formObj.elements['fname'].value;
+            var lastname=formObj.elements['lname'].value;
+            document.getElementById('result').innerHTML=firstname.toLowerCase()+'.'+lastname.toLowerCase()+'@park.edu';
+            formObj.reset();
+            formObj.elements["fname"].focus();
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <div class="name">
+            <label>First Name</label>
+            <input type="text" id="first" name="fname">
+        </div>
+        <div class="name">
+            <label>Last Name</label>
+            <input type="text" id="last" name="lname">
+        </div>
+        <button onclick="email(event,this.form)">Submit</button>
+        <div id="result"></div>
+    </form>
+</body>
+</html>
