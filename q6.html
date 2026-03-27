@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information System</title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        table{
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td{
+            border: 1px solid black;
+            padding: 8px;
+        }
+        button{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<h2>Student Information System</h2>
+<form id="form1">
+    Name: <input type="text" id="name"><br><br>
+    Age: <input type="number" id="age"><br><br>
+    Course: <input type="text" id="course"><br><br>
+    <button type="button" onclick="addStudent()">Add Student</button>
+    <button type="button" onclick="resetForm()">Reset</button>
+</form>
+<table id="table1">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Course</th>
+    </tr>
+</table>
+<script>
+let students = [];
+function Student(name, age, course)
+{
+    this.name = name;
+    this.age = age;
+    this.course = course;
+    this.display = function()
+    {
+        let table = document.getElementById("table1");
+        let row = table.insertRow();
+        row.insertCell(0).innerHTML = this.name;
+        row.insertCell(1).innerHTML = this.age;
+        row.insertCell(2).innerHTML = this.course;
+    }
+}
+function addStudent()
+{
+    let n = document.getElementById("name").value;
+    let a = document.getElementById("age").value;
+    let c = document.getElementById("course").value;
+    let s = new Student(n, a, c);
+    students.push(s);
+    s.display();
+    document.getElementById("name").focus();
+}
+function resetForm()
+{
+    document.getElementById("form1").reset();
+}
+</script>
+</body>
+</html>
