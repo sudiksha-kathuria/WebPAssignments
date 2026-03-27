@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>q4</title>
+    <style>
+        form
+        {
+            background-color: rgb(127, 127, 235);
+            margin: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+            display:inline-block;
+            justify-content:center;
+            align-items:center;
+        }
+        form div
+        {
+            margin:10px;
+            padding:10px;
+        }
+        form button
+        {
+            margin:10px;
+        }
+    </style>
+    <script>
+        function calculateArea(event,formObj)
+        {
+            event.preventDefault();
+            var length=formObj.elements['len'].value;
+            var breadth=formObj.elements['bre'].value;
+            document.getElementById("result").innerHTML="Area of the Rectangle: "+ length*breadth;
+        }
+    </script>
+</head>
+<body>
+    <form class="'numbers">
+        <div>
+            <label>Enter Length</label>
+            <input type="Number" name="len">
+        </div>
+        <div>
+            <label>Enter Breadth</label>
+            <input type="Number" name="bre">
+        </div>
+        <button onclick="calculateArea(event,this.form)">Submit</button>
+        <div id="result"></div>
+    </form>
+</body>
+</html>
